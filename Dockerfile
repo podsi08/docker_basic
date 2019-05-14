@@ -1,4 +1,4 @@
-FROM node:8
+FROM keymetrics/pm2:latest-alpine
 
 # create app directory
 WORKDIR /app
@@ -14,4 +14,4 @@ COPY . /app
 # Make port 3000 available outside this container
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["pm2-runtime", "process.yml"]
